@@ -80,7 +80,7 @@ abstract class BankAccount {
   // Optional per-month maintenance hook
   void resetMonthlyCounters() {}
 
-  // Display info (polymorphic friendly)
+  // Display info 
   void displayInfo() {
     print('----------------------------------------');
     print('Account #$accountNumber  |  ${runtimeType}');
