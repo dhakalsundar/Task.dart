@@ -278,7 +278,7 @@ class Bank {
     final from = find(fromAccount);
     final to = find(toAccount);
 
-    // Execute atomically (best-effort)
+    // Execute atomically 
     try {
       from.withdraw(amount);
       to.deposit(amount);
