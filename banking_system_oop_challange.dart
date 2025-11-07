@@ -58,7 +58,6 @@ abstract class BankAccount {
 
   double get balance => _balance;
 
-  // Protected-ish helpers (kept private to enforce invariants)
   void _credit(double amount) {
     if (amount <= 0) {
       throw InvalidAmountException('Deposit amount must be > 0.');
