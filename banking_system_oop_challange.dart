@@ -284,9 +284,6 @@ class Bank {
       from.withdraw(amount);
       to.deposit(amount);
     } catch (e) {
-      // Rollback best we can if from was debited first in subclass logic
-      // NOTE: Our withdraw implementations only debit if valid; if an
-      // error thrown, no state change occurs, so rollback usually unnecessary.
       rethrow;
     }
   }
@@ -357,15 +354,15 @@ void main() {
     print('Expected savings rule triggered: $e');
   }
 
-  // // Transfer
-  // bank.transfer(fromAccount: 3001, toAccount: 1001, amount: 1000);
+  // Transfer
+  bank.transfer(fromAccount: 3001, toAccount: 1001, amount: 1000);
 
-  // // Apply monthly interest to Savings & Premium
-  // bank.applyMonthlyInterest();
+  // Apply monthly interest to Savings & Premium
+  bank.applyMonthlyInterest();
 
-  // // Report
-  // bank.generateReport();
+  // Report
+  bank.generateReport();
 
-  // // Start a new month
-  // bank.newMonth();
+  // Start a new month
+  bank.newMonth();
 }
